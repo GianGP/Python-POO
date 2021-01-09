@@ -1,4 +1,7 @@
 class Funcionario:
+    def __init__(self, nome):
+        self.nome = nome
+
     def registra_horas(self, horas):
         print('Horas registradas.')
     
@@ -18,3 +21,26 @@ class Alura(Funcionario):
     
     def busca_perguntas_sem_resposta(self):
         print('Mostrando pergunta não respondidas do fórum')
+
+class Junior(Alura):
+    pass
+
+
+class Hipster:
+    def __str__(self) -> str:
+        return f'Hipster, {self.nome}'
+
+
+class Pleno(Alura, Caelum, Hipster):
+    pass
+
+
+jose = Junior('José')
+jose.busca_perguntas_sem_resposta()
+
+luan = Pleno('Luan')
+luan.busca_perguntas_sem_resposta()
+luan.busca_cursos_do_mes()
+luan.mostra_tarefas()
+
+print(luan)
